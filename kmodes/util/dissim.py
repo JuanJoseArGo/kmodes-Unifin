@@ -7,7 +7,7 @@ import numpy as np
 
 def matching_dissim(a, b, **_):
     """Simple matching dissimilarity function"""
-    return np.sum(a != b, axis=1)
+    return np.sum(np.abs(a - b), axis=1)
 
 
 def jaccard_dissim_binary(a, b, **__):
