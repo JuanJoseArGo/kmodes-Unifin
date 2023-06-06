@@ -41,7 +41,7 @@ def encode_features(X, enc_map=None):
     Xenc = np.zeros(X.shape, dtype='int32')
     for ii in range(X.shape[1]):
         if fit:
-            {'auto':0,'camioneta':1,'camion':2,'autobus':3,'transporte pasajeros':4,'tractores':5,'maquinaria':6,'avion':7,'computadora':8,'electronica':9,'equipo medico':10,'desconocido':11,'otros':12,}
+            col_enc={'auto':0,'camioneta':1,'camion':2,'autobus':3,'transporte pasajeros':4,'tractores':5,'maquinaria':6,'avion':7,'computadora':8,'electronica':9,'equipo medico':10,'desconocido':11,'otros':12,}
             enc_map.append(col_enc)
         # Unknown categories all get a value of -1.
         Xenc[:, ii] = np.array([enc_map[ii].get(x, -1) for x in X[:, ii]])
